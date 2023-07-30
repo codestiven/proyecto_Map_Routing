@@ -38,7 +38,20 @@ def ruta_dijkstra(graph, start_node, end_node, weight='weight'):
                 distances[neighbor] = distance
                 heapq.heappush(queue, (distance, neighbor))
 
+    if distances[end_node] == float('inf'):
+        raise nx.NetworkXNoPath(f"No hay ruta entre {start_node} y {end_node}")
 
+    # Reconstruir la ruta más corta
+    path = [end_node]
+    current = end_node
+    total_distance = distances[end_node]
+
+    while current != start_node:
+        candidates = [(distances[neighbor], neighbor) for neighbor in graph.predecessors(current)]
+        _, current = min(candidates)
+        path.append(current)
+
+    return list(reversed(path)), total_distance
 
 
 
