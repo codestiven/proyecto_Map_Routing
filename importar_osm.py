@@ -13,3 +13,8 @@ class OSMHandler(osmium.SimpleHandler):
         self.graph.add_node(n.id, lon=n.location.lon, lat=n.location.lat)
         self.added_nodes.add(n.id)
 
+    def way(self, w):
+        nodes = w.nodes
+        if len(nodes) < 2:
+            return
+
