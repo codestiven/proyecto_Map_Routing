@@ -16,5 +16,3 @@ def exportar(ruta):
     # Guardar el mapa resultante en un archivo HTML
     mapa.save("mapa.html")
 
-    # Abrir el archivo HTML en el navegador predeterminado
-    webbrowser.open("mapa.html")
