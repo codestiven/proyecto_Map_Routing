@@ -52,6 +52,7 @@ def index():
         osm_handler = OSMHandler(grafo)
         # osm_handler2 = OSMHandler2(grafo2)
 
+
         osm_handler.apply_file("map.osm")
         # osm_handler2.apply_file("map.osm")
         
