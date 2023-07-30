@@ -18,3 +18,24 @@ class OSMHandler(osmium.SimpleHandler):
         if len(nodes) < 2:
             return
 
+        if nodes[-1].ref in self.added_nodes and nodes[0].ref in self.added_nodes:
+            self.multiple_edges_nodes.append(nodes[0].ref)
+
+        for i in range(1, len(nodes)):
+            if nodes[i - 1].ref in self.added_nodes and nodes[i].ref in self.added_nodes:
+                weight = 1.0
+                for tag in w.tags:
+                    if tag.k == "weight":
+                        weight = float(tag.v)
+                        break
+                if "oneway" in w.tags and w.tags["oneway"] == "yes":
+                    self.graph.add_edge(nodes[i - 1].ref, nodes[i].ref, weight=weight)
+                else:
+                    self.graph.add_edge(nodes[i - 1].ref, nodes[i].ref, weight=weight)
+                    self.graph.add_edge(nodes[i].ref, nodes[i - 1].ref, weight=weight)
+                    self.multiple_edges_nodes.append(nodes[i].ref)
+
+    def get_multiple_edges_nodes(self):
+        return self.multiple_edges_nodes
+
+
