@@ -9,4 +9,7 @@ class OSMHandler(osmium.SimpleHandler):
         self.added_nodes = set()
         self.multiple_edges_nodes = []
 
-   
+    def node(self, n):
+        self.graph.add_node(n.id, lon=n.location.lon, lat=n.location.lat)
+        self.added_nodes.add(n.id)
+
