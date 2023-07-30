@@ -33,23 +33,6 @@ def find_closest_node(graph, target_lat, target_lon):
     
 
 
-# # Utilizar la función find_closest_node con tus datos
 
-
-target_lat = 18.409198408075987
-target_lon =  -70.12997031211854
-
-
-
-closest_node = find_closest_node(graph, target_lat, target_lon)
-start_node = closest_node
-end_node = 11050232489
-
-print("El nodo más cercano es:", closest_node)
-
-
-# shortest_path = nx.dijkstra_path(graph, start_node, end_node, weight="weight")
-
-# print(shortest_path)
 
 

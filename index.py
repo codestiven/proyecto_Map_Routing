@@ -94,13 +94,7 @@ def index():
         except Exception as e:
             print(f"No hay ruta entre {ruta_inicial} y {destino}")
 
-        
-          # Reemplaza con tu resultado de Dijkstra
 
-        
-        
-        # general(ee,grafo,ruta_dijkstra)
-        
 
 
 
