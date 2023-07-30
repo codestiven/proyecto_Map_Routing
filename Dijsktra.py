@@ -56,12 +56,3 @@ def ruta_dijkstra(graph, start_node, end_node, weight='weight'):
 
 
 
-
-# start_node = 3246094326
-# end_node = 1268224094
-
-# shortest_path =  nx.dijkstra_path(graph, start_node, end_node , weight='weight')
-
-
-# print(shortest_path)
-
