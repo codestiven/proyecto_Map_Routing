@@ -38,6 +38,12 @@ class OSMHandler(osmium.SimpleHandler):
     def get_multiple_edges_nodes(self):
         return self.multiple_edges_nodes
 
+# Crear el grafo
+graph = nx.MultiDiGraph()
+
+# Crear el manejador de OSM y aplicarlo al archivo OSM
+osm_handler = OSMHandler(graph)
+osm_handler.apply_file("map.osm")
 
 # Obtener los nodos con múltiples aristas
 # multiple_edges_nodes = osm_handler.get_multiple_edges_nodes()
