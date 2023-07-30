@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mapa Interactivo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+
+    </style>
+</head>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<body>
+    <div class="center-text">
+        <h1>Enrutamiento del mapa</h1>
+        <p>Por favor, ingrese la ruta que desea realizar</p>
+    </div>
+    
+    <div id="map"></div>
+    
+    <form id="coordinatesForm" action="/" method="post">
+        <input type="hidden" id="coordinates" name="coordinates" value="">
+        <div class="center-button">
+            <button id="submitButton" type="submit" class="btn btn-primary m-4 w-25 h-25 h4" disabled>Obtener Coordenadas</button>
+        </div>
+    </form>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>
